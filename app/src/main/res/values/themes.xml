@@ -1,0 +1,22 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Notes" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+
+        <!-- Changing the status bar background color-->
+        <item name="android:statusBarColor">@color/statusBarColor</item>
+
+        <!-- Changing the status bar item color white to black -->
+<!--        <item name="android:windowLightStatusBar">true</item>-->
+
+
+    </style>
+
+    <style name="Theme.Notes" parent="Base.Theme.Notes" />
+<!--    <style name="ProgressBar">-->
+<!--        <item name="colorPrimary">@color/red_color</item>-->
+<!--    </style>-->
+
+
+</resources>

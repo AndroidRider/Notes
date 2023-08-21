@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+
+    <!-- Comments -->
+
+    <color name="splashBackground">@color/toolbarColor</color>
+    <color name="statusBarColor">@color/toolbarColor</color>
+    <color name="toolbarColor">#26A69A</color>
+
+    <color name="buttonColor">#00BFA5</color>
+
+
+<!--    <color name="toolbarTextColor">#442C2E</color>-->
+    <color name="toolbarTextColor">#FFFFFF</color>
+    <color name="toolbarIconColor">#FFFFFF</color>
+    <color name="textColor">#442C2E</color>
+    <color name="textColorHint">#D1D1D1</color>
+
+
+    <color name="red_color">#FF5151</color>
+    <color name="green_color">#11D99B</color>
+    <color name="yellow_color">#FFD600</color>
+
+
+
+    <color name="fragmentBackgroundColor">#E8E8E8</color>
+    <color name="listItemColor">#FFFFFF</color>
+    <color name="bgEditText">@color/listItemColor</color>
+
+    <color name="filterShapeColor">@color/listItemColor</color>
+
+
+
+</resources>
