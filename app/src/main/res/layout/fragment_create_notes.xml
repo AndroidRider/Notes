@@ -83,6 +83,7 @@
         android:layout_margin="26dp"
         app:backgroundTint="@color/buttonColor"
         android:src="@drawable/baseline_done_24"
-        android:layout_gravity="bottom|right"/>
+        android:layout_gravity="bottom|end"
+        android:contentDescription="TODO" />
 
 </FrameLayout>
