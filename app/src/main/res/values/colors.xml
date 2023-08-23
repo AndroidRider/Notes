@@ -4,7 +4,6 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-
     <!-- Comments -->
 
     <color name="splashBackground">@color/toolbarColor</color>
@@ -13,10 +12,9 @@
 
     <color name="buttonColor">#00BFA5</color>
 
-
-<!--    <color name="toolbarTextColor">#442C2E</color>-->
     <color name="toolbarTextColor">#FFFFFF</color>
     <color name="toolbarIconColor">#FFFFFF</color>
+
     <color name="textColor">#442C2E</color>
     <color name="textColorHint">#D1D1D1</color>
 
@@ -26,12 +24,13 @@
     <color name="yellow_color">#FFD600</color>
 
 
-
     <color name="fragmentBackgroundColor">#E8E8E8</color>
     <color name="listItemColor">#FFFFFF</color>
     <color name="bgEditText">@color/listItemColor</color>
-
     <color name="filterShapeColor">@color/listItemColor</color>
+
+
+
 
 
 

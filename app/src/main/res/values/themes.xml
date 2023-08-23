@@ -8,15 +8,18 @@
         <item name="android:statusBarColor">@color/statusBarColor</item>
 
         <!-- Changing the status bar item color white to black -->
-<!--        <item name="android:windowLightStatusBar">true</item>-->
+<!--      <item name="android:windowLightStatusBar">true</item>-->
 
+    </style>
 
+    <!-- For toolbar back arrow color changing -->
+    <style name="MyToolbarStyle" parent="Widget.MaterialComponents.Toolbar.Primary">
+        <item name="android:tint">@color/white</item>
     </style>
 
     <style name="Theme.Notes" parent="Base.Theme.Notes" />
 <!--    <style name="ProgressBar">-->
 <!--        <item name="colorPrimary">@color/red_color</item>-->
 <!--    </style>-->
-
 
 </resources>

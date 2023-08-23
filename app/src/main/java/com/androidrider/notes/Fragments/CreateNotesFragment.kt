@@ -4,9 +4,11 @@ import android.os.Bundle
 import android.text.format.DateFormat
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
 import com.androidrider.notes.ModelClass.NotesModel
@@ -28,6 +30,11 @@ class CreateNotesFragment : Fragment() {
 
         // Inflate the layout for this fragment
         binding = FragmentCreateNotesBinding.inflate(layoutInflater,container,false)
+
+        // Enable the back arrow in the toolbar
+        (requireActivity() as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        setHasOptionsMenu(true) // Enable options menu handling
 
         // set green default
         binding.pGreen.setImageResource(R.drawable.baseline_done_24)
@@ -88,6 +95,17 @@ class CreateNotesFragment : Fragment() {
         Navigation.findNavController(it!!).navigate(R.id.action_createNotesFragment_to_homeFragment)
 
     }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> {
+                requireActivity().onBackPressed() // Navigate back to the previous fragment
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
 }
 
 

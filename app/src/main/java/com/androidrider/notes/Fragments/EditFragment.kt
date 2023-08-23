@@ -11,6 +11,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
@@ -35,7 +36,10 @@ class EditFragment : Fragment() {
         // Inflate the layout for this fragment
 
         binding = FragmentEditBinding.inflate(layoutInflater,container,false)
-        setHasOptionsMenu(true)
+
+        // Enable the back arrow in the toolbar
+        (requireActivity() as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        setHasOptionsMenu(true) // Enable options menu handling
 
         binding.edtTitle.setText(myNotes.data.title)
         binding.edtSubTitle.setText(myNotes.data.subTitle)
@@ -123,31 +127,43 @@ class EditFragment : Fragment() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
-        if (item.itemId == R.id.action_delete){
+        when (item.itemId){
+            R.id.action_delete -> {
 
-            val bottomSheet = BottomSheetDialog(requireContext())
-            bottomSheet.setContentView(R.layout.delete_bottom_dialog)
+                val bottomSheet = BottomSheetDialog(requireContext())
+                bottomSheet.setContentView(R.layout.delete_bottom_dialog)
 
-            val textViewYes = bottomSheet.findViewById<TextView>(R.id.dialogYes)
-            val textViewNo = bottomSheet.findViewById<TextView>(R.id.dialogNo)
+                val textViewYes = bottomSheet.findViewById<TextView>(R.id.dialogYes)
+                val textViewNo = bottomSheet.findViewById<TextView>(R.id.dialogNo)
 
-            textViewYes?.setOnClickListener {
-                viewModel.deleteNotes(myNotes.data.id!!)
+                textViewYes?.setOnClickListener {
+                    viewModel.deleteNotes(myNotes.data.id!!)
 
-                Navigation.findNavController(requireView()).navigate(R.id.action_editFragment_to_homeFragment)
+                    Navigation.findNavController(requireView())
+                        .navigate(R.id.action_editFragment_to_homeFragment)
 
-                Toast.makeText(requireContext(), "Notes Deleted Successfully", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(
+                        requireContext(),
+                        "Notes Deleted Successfully",
+                        Toast.LENGTH_SHORT
+                    ).show()
 
-                bottomSheet.dismiss()
+                    bottomSheet.dismiss()
+                }
+
+                textViewNo?.setOnClickListener {
+
+                    bottomSheet.dismiss()
+                }
+
+                bottomSheet.show()
             }
-
-            textViewNo?.setOnClickListener {
-
-                bottomSheet.dismiss()
+            android.R.id.home -> {
+                requireActivity().onBackPressed() // Navigate back to the previous fragment
+                return true
             }
-
-            bottomSheet.show()
         }
         return super.onOptionsItemSelected(item)
     }
+
 }
