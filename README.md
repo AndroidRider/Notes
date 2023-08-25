@@ -25,12 +25,52 @@ The app follows the MVVM (Model-View-ViewModel) architectural pattern and utiliz
 </p>
 
 # Features:
-<p><b>1. Create Note:</b></p>
-Users can create a new note by providing a title and content. After entering the details, they can save the note.
-<p><b>2. View Notes:</b></p>
-The app displays a list of all saved notes on the main screen. Users can tap on a note to view its details.
-<p><b>3. Update Note:</b></p>
-Users can edit the title and content of an existing note. After making changes, they can save the updated note.
-<p><b>4. Delete Note:</b></p>
-Users can delete a note from the list. A confirmation dialog will appear before the note is permanently deleted.
+<p>1. <b>Create Note:</b> Users can create a new note by providing a title and content. After entering the details, they can save the note.</p>
+<p>2. <b>View Notes:</b> The app displays a list of all saved notes on the main screen. Users can tap on a note to view its details.</p>
+<p>3. <b>Update Note:</b> Users can edit the title and content of an existing note. After making changes, they can save the updated note.</p>
+<p>4. <b>Delete Note:</b> Users can delete a note from the list. A confirmation dialog will appear before the note is permanently deleted.</p>
+
+# MVVM Architecture:
+MVVM is an architectural pattern that separates an application into three main components: Model, View, and ViewModel.
+
+
+<p>1. <b>Model:</b></p>
+
+* Represents the data and business logic of the application.
+* In this app, the Note class represents a single note with properties like id, title, and content.
+
+<p>2. <b>View:</b></p>
+
+* Displays the UI to the user and captures user input.
+* In this app, activities and fragments represent the views.
+* The main screen displays the list of notes, and a detail screen displays the details of a selected note.
+
+<p>3. <b>ViewModel:</b></p>
+
+* Acts as an intermediary between the Model and the View.
+* Holds and manages UI-related data and states.
+* Handles user interactions and triggers corresponding actions in the Model.
+* In this app, the NoteViewModel class exposes methods for CRUD operations on notes.
+
+
+
+# Navigation Component:
+The Navigation Component simplifies the navigation flow between different screens in an Android app. It uses a graph-based navigation model.
+
+<p>1. <b>Navigation Graph:</b></p>
+
+* Create a navigation graph that defines the flow between the main screen and the detail/edit screen.
+* Add actions to navigate between the screens.
+
+<p>2. <b>Main Screen:</b></p>
+
+* Display the list of notes using a RecyclerView.
+* Handle item clicks to navigate to the detail screen.
+
+<p>3. <b>Detail/Edit Screen:</b></p>
+
+* Display the details of the selected note.
+* Allow editing of the note's title and content.
+* Handle save and delete actions.
+
 
