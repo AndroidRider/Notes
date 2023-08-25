@@ -52,8 +52,6 @@ MVVM is an architectural pattern that separates an application into three main c
 * Handles user interactions and triggers corresponding actions in the Model.
 * In this app, the NoteViewModel class exposes methods for CRUD operations on notes.
 
-
-
 # Navigation Component:
 The Navigation Component simplifies the navigation flow between different screens in an Android app. It uses a graph-based navigation model.
 
@@ -74,3 +72,26 @@ The Navigation Component simplifies the navigation flow between different screen
 * Handle save and delete actions.
 
 
+
+# CRUD Operations:
+
+<p>1. <b>Create:</b></p>
+
+* Collect input from the user on the detail/edit screen.
+* Create a new Note object and add it to the list.
+
+<p>2. <b>Read:</b></p>
+
+* Display the list of notes from the ViewModel in the RecyclerView.
+
+<p>3. <b>Update:</b></p>
+
+* Load the selected note's details into the detail/edit screen.
+* Allow the user to modify the details and update the ViewModel.
+
+<p>4. <b>Delete:</b></p>
+
+* Display a confirmation dialog on the detail/edit screen.
+* On confirmation, remove the note from the ViewModel's list.
+#
+Remember that this is a high-level overview, and you will need to implement various components and classes in your project to achieve these functionalities fully. It's recommended to refer to Android's official documentation for the Navigation Component and MVVM architecture, as well as other online resources and tutorials for a step-by-step implementation guide.
