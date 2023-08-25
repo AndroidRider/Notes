@@ -104,6 +104,7 @@
             android:layout_margin="26dp"
             android:src="@drawable/baseline_add"
             android:backgroundTint="@color/buttonColor"
+            app:tint="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:contentDescription="TODO" />

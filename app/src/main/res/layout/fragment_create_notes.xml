@@ -82,6 +82,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="26dp"
         app:backgroundTint="@color/buttonColor"
+        app:tint="@color/white"
         android:src="@drawable/baseline_done_24"
         android:layout_gravity="bottom|end"
         android:contentDescription="TODO" />

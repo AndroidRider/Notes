@@ -12,8 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="@style/MyToolbarStyle"
-        android:background="@color/toolbarColor"
-        app:titleTextColor="@color/toolbarTextColor"/>
+        android:background="@color/toolbarColor"/>
 
 
     <fragment
