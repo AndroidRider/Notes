@@ -1,17 +1,16 @@
 package com.androidrider.notes.Fragments
 
+
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.SearchView
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
-import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.androidrider.notes.Adapter.NotesAdapter
@@ -24,10 +23,10 @@ import java.util.Locale
 
 class HomeFragment : Fragment() {
 
-    lateinit var binding: FragmentHomeBinding
-    lateinit var notesAdapter: NotesAdapter
-    val viewModel: NotesViewModel by viewModels()
-    var myNotesList = arrayListOf<NotesModel>()
+    private lateinit var binding: FragmentHomeBinding
+    private lateinit var notesAdapter: NotesAdapter
+    private val viewModel: NotesViewModel by viewModels()
+    private var myNotesList = arrayListOf<NotesModel>()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View? {
@@ -41,6 +40,7 @@ class HomeFragment : Fragment() {
 //        binding.recyclerview.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.VERTICAL, false)
 //        binding.recyclerview.layoutManager = GridLayoutManager(requireContext(),2,LinearLayoutManager.VERTICAL, false)
         binding.recyclerview.layoutManager = StaggeredGridLayoutManager(2, RecyclerView.VERTICAL)
+
 
         // get All Notes from database
         viewModel.getNotes().observe(viewLifecycleOwner) { notesList ->
